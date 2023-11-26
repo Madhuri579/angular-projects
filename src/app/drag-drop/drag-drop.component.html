@@ -1,0 +1,6 @@
+<div class="task-container">
+    <div class="task-group" *ngFor="let grp of taskGroups" (drop)="onDrop($event)" (dragover)="allowDrop($event)">
+        <div class="task-head">{{grp}}</div>
+        <div  *ngFor="let tas of tasks" id="task-id" class="task" draggable="true" (dragstart)="onDragStart($event,tas)">{{tas}}</div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div>Player no: {{secondPlayer ? "Player 2" : "Player 1"}}</div>
+
+<table>
+    <tbody>
+        <tr *ngFor="let ro of cells let rowIndex = index">
+            <td *ngFor="let cell of ro let cellIndex = index" (click)="handleInput(rowIndex,cellIndex)">{{cell}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="game-board">
+    <div *ngFor="let cell of boardCells let i =index" (click)="handleBoardInput(i)" class="grid-cell">{{cell}}</div>
+</div>

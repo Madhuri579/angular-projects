@@ -1,0 +1,23 @@
+.task-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.task-group{
+    border: 2px solid lightgrey;
+    padding: 12px;
+    margin: 12px;
+    height: 500px;
+    width: 150px;
+}
+
+.task-head{
+    padding: 16px;
+}
+
+.task{
+    border: 2px solid gray;
+    padding: 12px;
+    margin: 12px;
+    width: 64px;
+}

@@ -1,0 +1,11 @@
+<div class="container">
+    <h1>To Do List</h1>
+    <form [formGroup]="listForm" (ngSubmit)="addTodo()">
+        <input type="text" formControlName="todo" placeholder="Add Todo" class="to-do-input"/>
+        <button type="submit" >Add</button>
+    </form>
+    <div class="task-list" *ngFor="let task of tasks">
+        <div>{{task}}</div>
+        <button (click)="removeTask(task)">Remove</button>
+    </div>
+</div>

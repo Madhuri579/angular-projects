@@ -1,0 +1,51 @@
+<form [formGroup] ='testForm'  (ngSubmit)="submitForm()">
+    <div class="form-field">
+        <label for="firstName">First Name:</label><br>
+        <input type="text" id="firstName" formControlName = "firstName" /><br>
+        <div *ngIf="testFormControls.firstName.touched && testFormControls.firstName?.errors?.required">First Name is required</div>
+    </div>
+
+    <div class="form-field">
+        <label for="lastName">Last Name:</label><br>
+        <input type ="text" id="lastName" formControlName="lastName" /><br>
+        <div *ngIf="testFormControls.lastName.touched && testFormControls.lastName?.errors?.required">Last Name is required</div>    
+    </div>
+
+    <div class="form-field">
+        <label for="userName">User Name:</label><br>
+        <input type="text" id="userName" formControlName="userName"/><br>
+        <div *ngIf="testFormControls.userName.touched && testFormControls.userName.errors?.required">User name is required</div>
+        <div *ngIf="testFormControls.userName.touched && testFormControls.userName.errors?.['minLength']">User Name must be mininmun 8 characters</div>
+    </div>
+
+    <div class="form-field">
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" formControlName="email"/><br>
+        <div *ngIf="testFormControls.email.touched && testFormControls.email?.errors?.required">Email is required</div>
+        <div *ngIf="testFormControls.email.touched && testFormControls.email?.errors?.email">Enter valid email address</div>
+    </div>
+
+    <div class="form-field">
+        <label for ="password">Password:</label><br>
+        <input type="password" id="password" formControlName="password"/><br>
+        <div *ngIf="testFormControls.password.touched && testFormControls.password.errors?.required">Password is required</div>
+        <div *ngIf="testFormControls.password.touched && testFormControls.password.errors?.notValid">Password is in Valid</div>
+    </div>
+
+    <div class="form-field">
+        <label for ="cnpwd">Confirm Password:</label><br>
+        <input type="password" id="cnpwd" formControlName="cnpwd"/><br>
+        <div *ngIf="testFormControls.cnpwd.touched && testFormControls.cnpwd?.errors?.required">Please Confirm Password</div>
+        <div *ngIf="testFormControls.cnpwd?.touched && testFormControls.cnpwd.errors?.passwordMisMatch">Password has to match</div>
+    </div>
+
+    <div>
+        <input type="checkbox" id="terms" formControlName="terms"/>
+        <label for="terms">I have read and agree to accepth the terms</label>
+    </div>
+
+    <div class="form-buttons">
+        <button type="submit" [disabled]="testForm.invalid">Submit Form</button>
+        <button type="button" (click)="restForm()">Reset</button>
+    </div>
+</form>

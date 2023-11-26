@@ -1,0 +1,19 @@
+.progress-bar-container{
+    border: 0px solid black;
+    height: 24px;
+    margin-bottom: 24px;
+    background-color: #f0f0f0;
+}
+
+.prgress-bar{
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.5s;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    transition: width 0.5s; // Apply the transition property to the width
+  }
